@@ -1,6 +1,8 @@
 body {
     margin: 0;
-    background-image: linear-gradient(to bottom right, #333333, #1f1f1f, #080808);
+    background: linear-gradient(124deg, #ff2400, #e81d1d, #e8b71d, #e3e81d, #1de840, #1ddde8, #2b1de8, #dd00f3, #dd00f3);
+    background-size: 1800% 1800%;
+    animation: rainbow 18s ease-in-out infinite;
 }
 
 bold {
@@ -19,24 +21,6 @@ bold {
     gap: 32px;
 }
 
-.left {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 32px;
-}
-
-.right {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    gap: 32px;
-}
-
 .intro {
     width: 512px;
     height: 96px;
@@ -51,7 +35,10 @@ bold {
     align-items: flex-start;
     justify-content: center;
     gap: 4px;
+    opacity: 0;
     animation: zoom-in 0.6s ease;
+    animation-delay: 0.2s;
+    animation-fill-mode: forwards;
 }
 
 .title {
@@ -86,14 +73,14 @@ bold {
     width: 36px;
     height: 36px;
     border-radius: 9999px;
-    background-color: #0000003e;
+    background: rgba(0, 0, 0, 0.4);    
     transition: all 0.2s;
     text-decoration: none;
 }
 
 .intro-social:hover {
     cursor: pointer;
-    background-color: #ffffff3e;
+    background: rgba(0, 0, 0, 0.2);    
 }
 
 .popup {
@@ -101,7 +88,7 @@ bold {
     bottom: 73px;
     padding: 6px 12px;
     border-radius: 10px;
-    background: rgba(0, 0, 0, 1);    
+    background: rgba(0, 0, 0, 0.8);    
     transition: all 0.2s;
     transition-delay: 0.1s;
     opacity: 0;
@@ -121,27 +108,6 @@ bold {
     margin: 0;
 }
 
-.coming-soon {
-    font-family: 'Poppins', sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    color: #ffffff;
-    margin: 0;
-    opacity: 0;
-    animation: fade-in 1.8s ease;
-    animation-delay: 0.6s;
-    animation-fill-mode: forwards;
-}
-
-@keyframes fade-in {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-}
-
 @keyframes zoom-in {
     0% {
         opacity: 0;
@@ -151,4 +117,10 @@ bold {
         opacity: 1;
         transform: scale(100%);
     }
+}
+
+@keyframes rainbow { 
+    0%{background-position:0% 82%}
+    50%{background-position:100% 19%}
+    100%{background-position:0% 82%}
 }
